@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Verify Email | CONNECT</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/verify-otp.css">
+</head>
+
+<body>
+
+<div class="auth-page">
+
+    <div class="auth-card">
+
+        <!-- BRAND -->
+
+        <div class="auth-brand">
+            <h1>CONNE<span>CT</span></h1>
+            <p>Verify your email address</p>
+        </div>
+
+
+        <!-- HEADING -->
+
+        <div class="auth-heading">
+
+            <span class="section-label">
+                EMAIL VERIFICATION
+            </span>
+
+            <h2>Enter OTP</h2>
+
+            <p>
+                We sent a 6-digit verification code to
+                <strong id="userEmail">your email</strong>.
+            </p>
+
+        </div>
+
+
+        <!-- OTP FORM -->
+
+        <form id="otpForm">
+
+            <div class="form-group">
+
+                <label for="otp">
+                    Verification Code
+                </label>
+
+                <input
+                    type="text"
+                    id="otp"
+                    placeholder="Enter 6-digit OTP"
+                    maxlength="6"
+                    inputmode="numeric"
+                    autocomplete="one-time-code"
+                    required
+                >
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div id="otpMessage" class="auth-message"></div>
+
+
+            <!-- VERIFY BUTTON -->
+
+            <button
+                type="submit"
+                id="verifyBtn"
+                class="auth-btn"
+            >
+                Verify Email
+            </button>
+
+        </form>
+
+
+        <!-- RESEND -->
+
+        <div class="resend-section">
+
+            <span>Didn't receive the code?</span>
+
+            <button
+                type="button"
+                id="resendBtn"
+                class="resend-btn"
+            >
+                Resend OTP
+            </button>
+
+        </div>
+
+
+        <!-- BACK -->
+
+        <div class="auth-footer">
+
+            <a href="register.html">
+                ← Back to Registration
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/api.js"></script>
+<script src="js/verify-otp.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | CONNECT</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+
+<div class="auth-page">
+
+    <div class="auth-card">
+
+        <!-- BRAND -->
+
+        <div class="auth-brand">
+            <h1>CONNE<span>CT</span></h1>
+            <p>Create your account</p>
+        </div>
+
+
+        <!-- HEADER -->
+
+        <div class="auth-heading">
+
+            <span class="section-label">
+                GET STARTED
+            </span>
+
+            <h2>Create Account</h2>
+
+            <p>
+                Join CONNECT and start connecting with others.
+            </p>
+
+        </div>
+
+
+        <!-- REGISTER FORM -->
+
+        <form id="registerForm">
+
+            <!-- FULL NAME -->
+
+            <div class="form-group">
+
+                <label for="fullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create a password"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div id="registerMessage" class="auth-message"></div>
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="submit"
+                id="registerBtn"
+                class="auth-btn"
+            >
+                Create Account
+            </button>
+
+        </form>
+
+
+        <!-- LOGIN -->
+
+        <div class="auth-footer">
+
+            <span>Already have an account?</span>
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/api.js"></script>
+<script src="js/register.js"></script>
+
+</body>
+
+</html>

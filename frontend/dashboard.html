@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | CONNECT</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-page">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <h2>CONNE<span>CT</span></h2>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="active">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="users.html">
+                    <span class="nav-icon">♙</span>
+                    <span>Users</span>
+                </a>
+
+                <a href="connections.html">
+                    <span class="nav-icon">♧</span>
+                    <span>Connections</span>
+                </a>
+
+                <a href="subscription.html">
+                    <span class="nav-icon">◆</span>
+                    <span>Subscription</span>
+                </a>
+
+                <a href="wallet.html">
+                    <span class="nav-icon">◇</span>
+                    <span>Wallet</span>
+                </a>
+
+                <a href="documents.html">
+                    <span class="nav-icon">▤</span>
+                    <span>Documents</span>
+                </a>
+
+                <a href="video-call.html">
+                    <span class="nav-icon">◉</span>
+                    <span>Video Calls</span>
+                </a>
+
+            </nav>
+
+            <button class="logout-btn" onclick="logout()">
+                Logout
+            </button>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="dashboard-main">
+
+            <!-- TOP BAR -->
+
+            <header class="dashboard-topbar">
+
+                <div class="dashboard-heading">
+
+                    <h1>
+                        Welcome back,
+                        <span id="welcomeName">User</span>
+                    </h1>
+
+                    <p>
+                        Here's what's happening with your CONNECT account.
+                    </p>
+
+                </div>
+
+
+                <!-- USER PROFILE -->
+
+                <div class="user-profile">
+
+                    <div class="user-avatar" id="userAvatar">
+                        U
+                    </div>
+
+                    <div class="user-info">
+
+                        <span class="user-name" id="userName">
+                            User
+                        </span>
+
+                        <span class="user-role" id="userRole">
+                            User
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =========================
+                 STAT CARDS
+            ========================== -->
+
+            <section class="stats-grid">
+
+                <!-- WALLET -->
+
+                <div class="card stat-card">
+
+                    <div class="stat-label">
+                        Wallet Balance
+                    </div>
+
+                    <div class="stat-value" id="walletBalance">
+                        0
+                    </div>
+
+                    <div class="stat-description">
+                        Available credits
+                    </div>
+
+                </div>
+
+
+                <!-- CONNECTIONS -->
+
+                <div class="card stat-card">
+
+                    <div class="stat-label">
+                        Connections
+                    </div>
+
+                    <div class="stat-value" id="connectionCount">
+                        0
+                    </div>
+
+                    <div class="stat-description">
+                        Your accepted connections
+                    </div>
+
+                </div>
+
+
+                <!-- VIDEO CALLS -->
+
+                <div class="card stat-card">
+
+                    <div class="stat-label">
+                        Video Calls
+                    </div>
+
+                    <div class="stat-value" id="callCount">
+                        0
+                    </div>
+
+                    <div class="stat-description">
+                        Total call history
+                    </div>
+
+                </div>
+
+
+                <!-- AI DOCUMENTS -->
+
+                <div class="card stat-card">
+
+                    <div class="stat-label">
+                        AI Documents
+                    </div>
+
+                    <div class="stat-value" id="documentCount">
+                             0
+                    </div>
+
+                    <div class="stat-description">
+                        Uploaded documents
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 MAIN DASHBOARD GRID
+            ========================== -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- QUICK ACTIONS -->
+
+                <div class="card dashboard-card">
+
+                    <div class="dashboard-card-header">
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+                    </div>
+
+
+                    <div class="quick-actions">
+
+                        <!-- CONNECT -->
+
+                        <a href="users.html" class="quick-action">
+
+                            <div class="quick-action-icon">
+                                ♧
+                            </div>
+
+                            <h3>
+                                Find People
+                            </h3>
+
+                            <p>
+                                Discover users and send connection requests.
+                            </p>
+
+                        </a>
+
+
+                        <!-- CONNECTIONS -->
+
+                        <a href="connections.html" class="quick-action">
+
+                            <div class="quick-action-icon">
+                                ♙
+                            </div>
+
+                            <h3>
+                                My Connections
+                            </h3>
+
+                            <p>
+                                Manage your accepted connections.
+                            </p>
+
+                        </a>
+
+
+                        <!-- DOCUMENTS -->
+
+                        <a href="documents.html" class="quick-action">
+
+                            <div class="quick-action-icon">
+                                ▤
+                            </div>
+
+                            <h3>
+                                AI Documents
+                            </h3>
+
+                            <p>
+                                Upload PDFs and ask AI questions.
+                            </p>
+
+                        </a>
+
+
+                        <!-- VIDEO CALL -->
+
+                        <a href="video-call.html" class="quick-action">
+
+                            <div class="quick-action-icon">
+                                ◉
+                            </div>
+
+                            <h3>
+                                Start a Call
+                            </h3>
+
+                            <p>
+                                Connect with one of your accepted users.
+                            </p>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RECENT ACTIVITY -->
+
+                <div class="card dashboard-card">
+
+                    <div class="dashboard-card-header">
+
+                        <h2>
+                            Recent Activity
+                        </h2>
+
+                        <a href="connections.html">
+                            View all
+                        </a>
+
+                    </div>
+
+
+                    <div class="activity-list">
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+                                ♧
+                            </div>
+
+                            <div class="activity-content">
+
+                                <h4>
+                                    Connections
+                                </h4>
+
+                                <p>
+                                    Your connection activity will appear here.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+                                ◉
+                            </div>
+
+                            <div class="activity-content">
+
+                                <h4>
+                                    Video Calls
+                                </h4>
+
+                                <p>
+                                    Your recent calls will appear here.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+                                ▤
+                            </div>
+
+                            <div class="activity-content">
+
+                                <h4>
+                                    Documents
+                                </h4>
+
+                                <p>
+                                    Your AI document activity will appear here.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     CURRENT SUBSCRIPTION
+                ========================== -->
+
+                <div class="card dashboard-card">
+
+                    <div class="dashboard-card-header">
+
+                        <h2>
+                            Current Subscription
+                        </h2>
+
+                        <a href="subscription.html">
+                            Manage
+                        </a>
+
+                    </div>
+
+
+                    <div class="subscription-info">
+
+                        <div>
+
+                            <div class="plan-name" id="subscriptionPlan">
+                                No active plan
+                            </div>
+
+                            <div class="plan-status" id="subscriptionStatus">
+                                Choose a plan to get started
+                            </div>
+
+                        </div>
+
+                        <div class="plan-credits">
+
+                            <strong id="subscriptionCredits">
+                                —
+                            </strong>
+
+                            <span>
+                                Credits
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     WALLET
+                ========================== -->
+
+                <div class="card dashboard-card">
+
+                    <div class="dashboard-card-header">
+
+                        <h2>
+                            Wallet
+                        </h2>
+
+                        <a href="wallet.html">
+                            View wallet
+                        </a>
+
+                    </div>
+
+
+                    <div class="subscription-info">
+
+                        <div>
+
+                            <div class="plan-name">
+                                Available Balance
+                            </div>
+
+                            <div class="plan-status">
+                                Ready to use
+                            </div>
+
+                        </div>
+
+                        <div class="plan-credits">
+
+                            <strong id="walletBalanceBottom">
+                                0
+                            </strong>
+
+                            <span>
+                                Credits
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

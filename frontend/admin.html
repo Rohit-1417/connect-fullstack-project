@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | CONNECT</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+<div class="dashboard-page">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <h2>CONNE<span>CT</span></h2>
+        </div>
+
+        <div class="admin-badge">
+            <span>ADMIN</span>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="#overview" class="active">
+                <span class="nav-icon">⌂</span>
+                <span>Overview</span>
+            </a>
+
+            <a href="#users">
+                <span class="nav-icon">◉</span>
+                <span>Users</span>
+            </a>
+
+            <a href="#subscriptions">
+                <span class="nav-icon">◆</span>
+                <span>Subscriptions</span>
+            </a>
+
+            <a href="#wallets">
+                <span class="nav-icon">◈</span>
+                <span>Wallets</span>
+            </a>
+
+            <a href="#documents">
+                <span class="nav-icon">▤</span>
+                <span>Documents</span>
+            </a>
+
+            <a href="#connections">
+                <span class="nav-icon">↔</span>
+                <span>Connections</span>
+            </a>
+
+            <a href="#calls">
+                <span class="nav-icon">◉</span>
+                <span>Call History</span>
+            </a>
+
+            <a href="#ai-usage">
+                <span class="nav-icon">✦</span>
+                <span>AI Usage</span>
+            </a>
+
+        </nav>
+
+        <button class="logout-btn" onclick="logout()">
+            Logout
+        </button>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <header class="dashboard-topbar">
+
+            <div class="dashboard-heading">
+
+                <span class="section-label">ADMIN PANEL</span>
+
+                <h1>Admin Dashboard</h1>
+
+                <p>
+                    Monitor users, subscriptions, connections and AI activity.
+                </p>
+
+            </div>
+
+
+            <div class="user-profile">
+
+                <div class="user-avatar" id="adminAvatar">
+                    A
+                </div>
+
+                <div class="user-info">
+
+                    <span class="user-name" id="adminName">
+                        Admin
+                    </span>
+
+                    <span class="user-role">
+                        Administrator
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= OVERVIEW ================= -->
+
+        <section id="overview" class="admin-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        OVERVIEW
+                    </span>
+
+                    <h2>System Overview</h2>
+
+                    <p>
+                        A quick look at the platform activity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-stats-grid">
+
+                <div class="admin-stat-card">
+
+                    <span class="admin-stat-label">
+                        TOTAL USERS
+                    </span>
+
+                    <h3 id="totalUsers">
+                        —
+                    </h3>
+
+                    <p>
+                        Registered accounts
+                    </p>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span class="admin-stat-label">
+                        SUBSCRIPTIONS
+                    </span>
+
+                    <h3 id="totalSubscriptions">
+                        —
+                    </h3>
+
+                    <p>
+                        Subscription records
+                    </p>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span class="admin-stat-label">
+                        WALLET BALANCE
+                    </span>
+
+                    <h3 id="totalWalletBalance">
+                        —
+                    </h3>
+
+                    <p>
+                        Total available credits
+                    </p>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span class="admin-stat-label">
+                        DOCUMENTS
+                    </span>
+
+                    <h3 id="totalDocuments">
+                        —
+                    </h3>
+
+                    <p>
+                        Uploaded PDFs
+                    </p>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span class="admin-stat-label">
+                        CONNECTIONS
+                    </span>
+
+                    <h3 id="totalConnections">
+                        —
+                    </h3>
+
+                    <p>
+                        Connection records
+                    </p>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span class="admin-stat-label">
+                        VIDEO CALLS
+                    </span>
+
+                    <h3 id="totalCalls">
+                        —
+                    </h3>
+
+                    <p>
+                        Recorded calls
+                    </p>
+
+                </div>
+
+
+                <div class="admin-stat-card">
+
+                    <span class="admin-stat-label">
+                        AI QUESTIONS
+                    </span>
+
+                    <h3 id="totalAIQuestions">
+                        —
+                    </h3>
+
+                    <p>
+                        Gemini questions
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= USERS ================= -->
+
+        <section id="users" class="admin-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        USERS
+                    </span>
+
+                    <h2>User Management</h2>
+
+                    <p>
+                        View registered users and account information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card admin-table-card">
+
+                <div class="table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Joined</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="usersTableBody">
+
+                            <tr>
+                                <td colspan="5">
+                                    Loading users...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SUBSCRIPTIONS ================= -->
+
+        <section id="subscriptions" class="admin-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        SUBSCRIPTIONS
+                    </span>
+
+                    <h2>Subscription Activity</h2>
+
+                    <p>
+                        Monitor user plans and subscription status.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card admin-table-card">
+
+                <div class="table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>User</th>
+                                <th>Plan</th>
+                                <th>Credits</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="subscriptionsTableBody">
+
+                            <tr>
+                                <td colspan="5">
+                                    Loading subscriptions...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WALLETS ================= -->
+
+        <section id="wallets" class="admin-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        WALLETS
+                    </span>
+
+                    <h2>Wallet Balances</h2>
+
+                    <p>
+                        Monitor user credit balances.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card admin-table-card">
+
+                <div class="table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Balance</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="walletsTableBody">
+
+                            <tr>
+                                <td colspan="3">
+                                    Loading wallets...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DOCUMENTS ================= -->
+
+        <section id="documents" class="admin-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        DOCUMENTS
+                    </span>
+
+                    <h2>Uploaded Documents</h2>
+
+                    <p>
+                        Monitor PDFs uploaded by users.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card admin-table-card">
+
+                <div class="table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>File</th>
+                                <th>User</th>
+                                <th>User ID</th>
+                                <th>Uploaded</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="documentsTableBody">
+
+                            <tr>
+                                <td colspan="4">
+                                    Loading documents...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONNECTIONS ================= -->
+
+        <section id="connections" class="admin-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        CONNECTIONS
+                    </span>
+
+                    <h2>Connection Activity</h2>
+
+                    <p>
+                        Monitor connection requests and accepted connections.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card admin-table-card">
+
+                <div class="table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Sender</th>
+                                <th>Receiver</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="connectionsTableBody">
+
+                            <tr>
+                                <td colspan="4">
+                                    Loading connections...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CALLS ================= -->
+
+        <section id="calls" class="admin-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        VIDEO CALLS
+                    </span>
+
+                    <h2>Call History</h2>
+
+                    <p>
+                        Monitor recorded video call activity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card admin-table-card">
+
+                <div class="table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Caller</th>
+                                <th>Receiver</th>
+                                <th>Started</th>
+                                <th>Duration</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="callsTableBody">
+
+                            <tr>
+                                <td colspan="4">
+                                    Loading calls...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= AI USAGE ================= -->
+
+        <section id="ai-usage" class="admin-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        AI USAGE
+                    </span>
+
+                    <h2>Gemini Activity</h2>
+
+                    <p>
+                        Monitor questions asked against uploaded documents.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card admin-table-card">
+
+                <div class="table-wrapper">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>User</th>
+                                <th>Document</th>
+                                <th>Question</th>
+                                <th>Date</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="aiUsageTableBody">
+
+                            <tr>
+                                <td colspan="4">
+                                    Loading AI usage...
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MESSAGE -->
+
+        <div id="adminMessage" class="admin-message"></div>
+
+
+    </main>
+
+</div>
+
+
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

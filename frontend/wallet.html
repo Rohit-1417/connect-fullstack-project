@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Wallet | CONNECT</title>
+
+    <link
+        rel="stylesheet"
+        href="css/common.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/wallet.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="dashboard-page">
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <h2>
+                    CONNE<span>CT</span>
+                </h2>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html">
+
+                    <span class="nav-icon">⌂</span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="users.html">
+
+                    <span class="nav-icon">♙</span>
+
+                    <span>
+                        Users
+                    </span>
+
+                </a>
+
+
+                <a href="connections.html">
+
+                    <span class="nav-icon">♧</span>
+
+                    <span>
+                        Connections
+                    </span>
+
+                </a>
+
+
+                <a href="subscription.html">
+
+                    <span class="nav-icon">◆</span>
+
+                    <span>
+                        Subscription
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="wallet.html"
+                    class="active"
+                >
+
+                    <span class="nav-icon">◇</span>
+
+                    <span>
+                        Wallet
+                    </span>
+
+                </a>
+
+
+                <a href="documents.html">
+
+                    <span class="nav-icon">▤</span>
+
+                    <span>
+                        Documents
+                    </span>
+
+                </a>
+
+
+                <a href="video-call.html">
+
+                    <span class="nav-icon">◉</span>
+
+                    <span>
+                        Video Calls
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </aside>
+
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="dashboard-main">
+
+
+            <!-- =========================
+                 TOPBAR
+            ========================== -->
+
+            <header class="dashboard-topbar">
+
+                <div class="dashboard-heading">
+
+                    <h1>
+                        Wallet
+                    </h1>
+
+                    <p>
+                        Manage your credits and view
+                        your transaction history.
+                    </p>
+
+                </div>
+
+
+                <div class="user-profile">
+
+                    <div
+                        class="user-avatar"
+                        id="userAvatar"
+                    >
+                        U
+                    </div>
+
+
+                    <div class="user-info">
+
+                        <span
+                            class="user-name"
+                            id="userName"
+                        >
+                            User
+                        </span>
+
+
+                        <span
+                            class="user-role"
+                            id="userRole"
+                        >
+                            User
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =========================
+                 WALLET OVERVIEW
+            ========================== -->
+
+            <section class="wallet-overview">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            WALLET
+                        </span>
+
+                        <h2>
+                            Your Credits
+                        </h2>
+
+                        <p>
+                            Your available balance for
+                            CONNECT services.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="wallet-balance-card">
+
+                    <div class="wallet-balance-content">
+
+                        <div class="wallet-balance-icon">
+                            ◇
+                        </div>
+
+
+                        <div>
+
+                            <span class="wallet-balance-label">
+                                Available Balance
+                            </span>
+
+                            <div class="wallet-balance-value">
+
+                                <strong id="walletBalance">
+                                    0
+                                </strong>
+
+                                <span>
+                                    credits
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Credits available in your wallet
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 TRANSACTION HISTORY
+            ========================== -->
+
+            <section class="transactions-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            ACTIVITY
+                        </span>
+
+                        <h2>
+                            Transaction History
+                        </h2>
+
+                        <p>
+                            A record of credits added to
+                            or used from your wallet.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card transactions-card">
+
+                    <div
+                        class="transactions-list"
+                        id="transactionsList"
+                    >
+
+                        <div class="loading-message">
+                            Loading transactions...
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/wallet.js"></script>
+
+</body>
+
+</html>

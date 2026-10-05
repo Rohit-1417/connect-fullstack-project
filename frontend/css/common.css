@@ -1,0 +1,189 @@
+/* ================================
+   GLOBAL RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: #0b0d12;
+    color: #f5f7fb;
+    min-height: 100vh;
+}
+
+
+/* ================================
+   COLORS / DESIGN SYSTEM
+================================ */
+
+:root {
+    --bg-primary: #0b0d12;
+    --bg-secondary: #11141b;
+    --bg-card: #151922;
+    --bg-input: #10131a;
+
+    --text-primary: #f5f7fb;
+    --text-secondary: #9ba3b4;
+    --text-muted: #697386;
+
+    --accent: #7c5cff;
+    --accent-light: #9a82ff;
+    --accent-dark: #6545e8;
+
+    --border: rgba(255, 255, 255, 0.08);
+
+    --success: #35d39a;
+    --danger: #ff5c70;
+    --warning: #f5b942;
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+
+    --shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ================================
+   LINKS
+================================ */
+
+a {
+    color: var(--accent-light);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #b3a2ff;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+button {
+    font-family: inherit;
+}
+
+.primary-btn {
+    border: none;
+    background: var(--accent);
+    color: white;
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.primary-btn:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+
+/* ================================
+   INPUTS
+================================ */
+
+input,
+textarea,
+select {
+    width: 100%;
+    background: var(--bg-input);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-muted);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.12);
+}
+
+
+/* ================================
+   CARDS
+================================ */
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+}
+
+
+/* ================================
+   COMMON TEXT
+================================ */
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+
+/* ================================
+   SCROLLBAR
+================================ */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #292e3a;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3a4050;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 14px;
+    }
+
+}

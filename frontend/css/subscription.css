@@ -1,0 +1,492 @@
+/* =========================
+   SUBSCRIPTION PAGE
+========================= */
+
+.subscription-page {
+    width: 100%;
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 6px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    opacity: 0.55;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.section-heading p {
+    margin: 7px 0 0;
+
+    font-size: 13px;
+    opacity: 0.55;
+}
+
+
+/* =========================
+   CURRENT PLAN SECTION
+========================= */
+
+.current-plan-section {
+    margin-bottom: 38px;
+}
+
+
+/* =========================
+   CURRENT PLAN CARD
+========================= */
+
+.current-plan-card {
+    position: relative;
+    overflow: hidden;
+
+    padding: 26px 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.current-plan-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: -90px;
+    right: -70px;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(130, 80, 255, 0.12);
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+.current-plan-content {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.current-plan-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    opacity: 0.5;
+}
+
+.current-plan-content h3 {
+    margin: 0;
+
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.current-plan-content p {
+    margin: 7px 0 0;
+
+    font-size: 13px;
+
+    opacity: 0.55;
+}
+
+.current-plan-credits {
+    min-width: 150px;
+
+    text-align: right;
+}
+
+.current-plan-credits span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 11px;
+    opacity: 0.5;
+}
+
+.current-plan-credits strong {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   PLANS SECTION
+========================= */
+
+.plans-section {
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   PLANS GRID
+========================= */
+
+.plans-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================
+   PLAN CARD
+========================= */
+
+.plan-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px;
+
+    min-height: 300px;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    backdrop-filter: blur(14px);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(160, 120, 255, 0.35);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   PLAN HEADER
+========================= */
+
+.plan-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.plan-name {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.plan-badge {
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+
+    background: rgba(140, 100, 255, 0.12);
+
+    color: rgba(210, 195, 255, 0.95);
+}
+
+
+/* =========================
+   PLAN PRICE
+========================= */
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+
+    gap: 4px;
+
+    margin-bottom: 8px;
+}
+
+.plan-price strong {
+    font-size: 36px;
+    font-weight: 750;
+
+    letter-spacing: -1px;
+}
+
+.plan-price span {
+    font-size: 12px;
+
+    opacity: 0.5;
+}
+
+
+/* =========================
+   PLAN CREDITS
+========================= */
+
+.plan-credit-text {
+    margin-bottom: 25px;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+.plan-credit-text strong {
+    font-weight: 700;
+
+    opacity: 1;
+}
+
+
+/* =========================
+   PLAN FEATURES
+========================= */
+
+.plan-features {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-bottom: 26px;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 13px;
+
+    opacity: 0.72;
+}
+
+.plan-features li::before {
+    content: "✓";
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 17px;
+    height: 17px;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+
+    background: rgba(120, 220, 170, 0.12);
+
+    color: rgba(150, 235, 190, 0.95);
+}
+
+
+/* =========================
+   SUBSCRIBE BUTTON
+========================= */
+
+.subscribe-btn {
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 12px 18px;
+
+    border: 1px solid rgba(160, 120, 255, 0.3);
+
+    border-radius: 10px;
+
+    background: rgba(130, 80, 255, 0.14);
+
+    color: inherit;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.subscribe-btn:hover {
+    background: rgba(130, 80, 255, 0.24);
+
+    border-color: rgba(160, 120, 255, 0.5);
+
+    transform: translateY(-1px);
+}
+
+.subscribe-btn:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.5;
+
+    transform: none;
+}
+
+
+/* =========================
+   ACTIVE PLAN
+========================= */
+
+.plan-card.active-plan {
+    border-color: rgba(150, 110, 255, 0.5);
+
+    box-shadow:
+        0 0 0 1px rgba(150, 110, 255, 0.08),
+        0 18px 50px rgba(90, 50, 180, 0.12);
+}
+
+.plan-card.active-plan .subscribe-btn {
+    background: rgba(100, 210, 160, 0.1);
+
+    border-color: rgba(100, 210, 160, 0.25);
+
+    color: rgba(170, 240, 205, 0.95);
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading-message {
+    grid-column: 1 / -1;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    opacity: 0.5;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.subscription-message {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.subscription-message.show {
+    display: block;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .current-plan-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .current-plan-credits {
+        min-width: 0;
+
+        text-align: left;
+    }
+
+    .current-plan-card {
+        padding: 22px;
+    }
+
+    .plan-card {
+        padding: 23px;
+    }
+
+}

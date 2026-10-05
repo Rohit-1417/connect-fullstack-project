@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Video Calls | CONNECT</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/video-call.css">
+</head>
+
+<body>
+
+<div class="dashboard-page">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <h2>CONNE<span>CT</span></h2>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="users.html">
+                <span class="nav-icon">◉</span>
+                <span>Users</span>
+            </a>
+
+            <a href="connections.html">
+                <span class="nav-icon">↔</span>
+                <span>Connections</span>
+            </a>
+
+            <a href="subscription.html">
+                <span class="nav-icon">◆</span>
+                <span>Subscription</span>
+            </a>
+
+            <a href="wallet.html">
+                <span class="nav-icon">◈</span>
+                <span>Wallet</span>
+            </a>
+
+            <a href="documents.html">
+                <span class="nav-icon">▤</span>
+                <span>Documents</span>
+            </a>
+
+            <a href="video-call.html" class="active">
+                <span class="nav-icon">◉</span>
+                <span>Video Calls</span>
+            </a>
+
+        </nav>
+
+
+        <button class="logout-btn" onclick="logout()">
+            Logout
+        </button>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- =========================
+             TOP BAR
+        ========================== -->
+
+        <header class="dashboard-topbar">
+
+            <div class="dashboard-heading">
+
+                <h1>Video Calls</h1>
+
+                <p>
+                    Start secure video calls with your connections.
+                </p>
+
+            </div>
+
+
+            <div class="user-profile">
+
+                <div
+                    class="user-avatar"
+                    id="userAvatar"
+                >
+                    U
+                </div>
+
+
+                <div class="user-info">
+
+                    <span
+                        class="user-name"
+                        id="userName"
+                    >
+                        User
+                    </span>
+
+                    <span
+                        class="user-role"
+                        id="userRole"
+                    >
+                        User
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             VIDEO CALL AREA
+        ========================== -->
+
+        <section class="video-call-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        VIDEO CALL
+                    </span>
+
+                    <h2>
+                        Start a Call
+                    </h2>
+
+                    <p>
+                        Select one of your connections to begin.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 CALL CARD
+            ========================== -->
+
+            <div class="card video-call-card">
+
+
+                <!-- Connection selection -->
+
+                <div class="call-selection">
+
+                    <label for="connectionSelect">
+                        Select Connection
+                    </label>
+
+
+                    <select
+                        id="connectionSelect"
+                    >
+
+                        <option value="">
+                            Select a connection
+                        </option>
+
+                    </select>
+
+
+                    <p class="selection-help">
+                        You can only call users who are already connected with you.
+                    </p>
+
+                </div>
+
+
+
+                <!-- Call controls -->
+
+                <div class="call-controls">
+
+                    <button
+                        id="startCallButton"
+                        class="start-call-button"
+                    >
+                        <span>◉</span>
+                        Start Video Call
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="callMessage"
+                    class="call-message"
+                ></div>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 ACTIVE CALL
+            ========================== -->
+
+            <div
+                class="card active-call-card"
+                id="activeCallCard"
+                style="display: none;"
+            >
+
+                <div class="active-call-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            LIVE CALL
+                        </span>
+
+                        <h2 id="callPartnerName">
+                            Connected User
+                        </h2>
+
+                    </div>
+
+
+                    <div
+                        class="call-status"
+                        id="callStatus"
+                    >
+                        Connecting...
+                    </div>
+
+                </div>
+
+
+
+                <!-- Video area -->
+
+                <div class="video-grid">
+
+
+                    <!-- Remote video -->
+
+                    <div class="video-container remote-video-container">
+
+                        <video
+                            id="remoteVideo"
+                            autoplay
+                            playsinline
+                        ></video>
+
+
+                        <div class="video-label">
+                            <span>Remote</span>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Local video -->
+
+                    <div class="video-container local-video-container">
+
+                        <video
+                            id="localVideo"
+                            autoplay
+                            muted
+                            playsinline
+                        ></video>
+
+
+                        <div class="video-label">
+                            <span>You</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Call controls -->
+
+                <div class="active-call-controls">
+
+                    <button
+                        id="toggleMicButton"
+                        class="call-control-button"
+                    >
+                        🎤
+                        <span>Mute</span>
+                    </button>
+
+
+                    <button
+                        id="toggleCameraButton"
+                        class="call-control-button"
+                    >
+                        📹
+                        <span>Camera</span>
+                    </button>
+
+
+                    <button
+                        id="endCallButton"
+                        class="end-call-button"
+                    >
+                        ☎
+                        <span>End Call</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 CALL HISTORY
+            ========================== -->
+
+            <section class="call-history-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            HISTORY
+                        </span>
+
+                        <h2>
+                            Recent Calls
+                        </h2>
+
+                        <p>
+                            Your previous video call activity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card call-history-card">
+
+                    <div
+                        id="callHistoryList"
+                        class="call-history-list"
+                    >
+
+                        <div class="connections-loading">
+                            Loading call history...
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script src="js/api.js"></script>
+<script src="js/video-call.js"></script>
+
+</body>
+
+</html>

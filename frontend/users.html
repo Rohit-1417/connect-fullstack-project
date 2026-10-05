@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Users | CONNECT</title>
+
+    <link
+        rel="stylesheet"
+        href="css/common.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/users.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="dashboard-page">
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <h2>
+                CONNE<span>CT</span>
+            </h2>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a
+                href="users.html"
+                class="active"
+            >
+                <span class="nav-icon">◉</span>
+                <span>Users</span>
+            </a>
+
+            <a href="connections.html">
+                <span class="nav-icon">↔</span>
+                <span>Connections</span>
+            </a>
+
+            <a href="subscription.html">
+                <span class="nav-icon">◆</span>
+                <span>Subscription</span>
+            </a>
+
+            <a href="wallet.html">
+                <span class="nav-icon">◈</span>
+                <span>Wallet</span>
+            </a>
+
+            <a href="documents.html">
+                <span class="nav-icon">▤</span>
+                <span>Documents</span>
+            </a>
+
+            <a href="video-call.html">
+                <span class="nav-icon">◉</span>
+                <span>Video Calls</span>
+            </a>
+
+        </nav>
+
+
+        <button
+            class="logout-btn"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- =========================
+             TOPBAR
+        ========================== -->
+
+        <header class="dashboard-topbar">
+
+            <div class="dashboard-heading">
+
+                <h1>
+                    Users
+                </h1>
+
+                <p>
+                    Discover people and build your network.
+                </p>
+
+            </div>
+
+
+            <div class="user-profile">
+
+                <div
+                    class="user-avatar"
+                    id="userAvatar"
+                >
+                    U
+                </div>
+
+
+                <div class="user-info">
+
+                    <span
+                        class="user-name"
+                        id="userName"
+                    >
+                        User
+                    </span>
+
+                    <span
+                        class="user-role"
+                        id="userRole"
+                    >
+                        User
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             USERS SECTION
+        ========================== -->
+
+        <section class="users-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        COMMUNITY
+                    </span>
+
+                    <h2>
+                        Find People
+                    </h2>
+
+                    <p>
+                        Connect with other users and expand your network.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- USERS CARD -->
+
+            <div class="card users-card">
+
+                <div
+                    class="users-list"
+                    id="usersList"
+                >
+
+                    <div class="users-loading">
+                        Loading users...
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="usersMessage"
+                class="users-message"
+            ></div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script src="js/api.js"></script>
+
+<script src="js/users.js"></script>
+
+
+</body>
+
+</html>

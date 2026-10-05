@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Connections | CONNECT</title>
+
+    <link
+        rel="stylesheet"
+        href="css/common.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/connections.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="dashboard-page">
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <h2>
+                CONNE<span>CT</span>
+            </h2>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a href="users.html">
+                <span class="nav-icon">◉</span>
+                <span>Users</span>
+            </a>
+
+
+            <a
+                href="connections.html"
+                class="active"
+            >
+                <span class="nav-icon">↔</span>
+                <span>Connections</span>
+            </a>
+
+
+            <a href="subscription.html">
+                <span class="nav-icon">◆</span>
+                <span>Subscription</span>
+            </a>
+
+
+            <a href="wallet.html">
+                <span class="nav-icon">◈</span>
+                <span>Wallet</span>
+            </a>
+
+
+            <a href="documents.html">
+                <span class="nav-icon">▤</span>
+                <span>Documents</span>
+            </a>
+
+
+            <a href="video-call.html">
+                <span class="nav-icon">◉</span>
+                <span>Video Calls</span>
+            </a>
+
+        </nav>
+
+
+        <button
+            class="logout-btn"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- =========================
+             TOPBAR
+        ========================== -->
+
+        <header class="dashboard-topbar">
+
+            <div class="dashboard-heading">
+
+                <h1>
+                    Connections
+                </h1>
+
+                <p>
+                    Manage your connection requests and network.
+                </p>
+
+            </div>
+
+
+            <div class="user-profile">
+
+                <div
+                    class="user-avatar"
+                    id="userAvatar"
+                >
+                    U
+                </div>
+
+
+                <div class="user-info">
+
+                    <span
+                        class="user-name"
+                        id="userName"
+                    >
+                        User
+                    </span>
+
+
+                    <span
+                        class="user-role"
+                        id="userRole"
+                    >
+                        User
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             PENDING REQUESTS
+        ========================== -->
+
+        <section class="connections-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        REQUESTS
+                    </span>
+
+                    <h2>
+                        Pending Requests
+                    </h2>
+
+                    <p>
+                        People who want to connect with you.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card connections-card">
+
+                <div
+                    class="requests-list"
+                    id="requestsList"
+                >
+
+                    <div class="connections-loading">
+                        Loading requests...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ACCEPTED CONNECTIONS
+        ========================== -->
+
+        <section class="connections-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        NETWORK
+                    </span>
+
+                    <h2>
+                        Your Connections
+                    </h2>
+
+                    <p>
+                        People you are connected with.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card connections-card">
+
+                <div
+                    class="connections-list"
+                    id="connectionsList"
+                >
+
+                    <div class="connections-loading">
+                        Loading connections...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             MESSAGE
+        ========================== -->
+
+        <div
+            id="connectionsMessage"
+            class="connections-message"
+        ></div>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script src="js/api.js"></script>
+
+<script src="js/connections.js"></script>
+
+
+</body>
+
+</html>

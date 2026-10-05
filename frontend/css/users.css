@@ -1,0 +1,328 @@
+/* =========================
+   USERS PAGE
+========================= */
+
+.users-section {
+    margin-bottom: 32px;
+}
+
+
+/* =========================
+   USERS HEADER
+========================= */
+
+.users-section .section-heading {
+    margin-bottom: 16px;
+}
+
+.users-section .section-heading h2 {
+    margin: 0;
+}
+
+.users-section .section-heading p {
+    margin-top: 6px;
+}
+
+
+/* =========================
+   USERS CARD
+========================= */
+
+.users-card {
+    padding: 0;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   USERS LIST
+========================= */
+
+.users-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================
+   USER ITEM
+========================= */
+
+.user-item {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 22px;
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        background 0.2s ease;
+}
+
+.user-item:last-child {
+    border-bottom: none;
+}
+
+.user-item:hover {
+    background: rgba(124, 92, 255, 0.045);
+}
+
+
+/* =========================
+   USER INFORMATION
+========================= */
+
+.user-details {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-width: 0;
+}
+
+
+.user-avatar-large {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(124, 92, 255, 0.2),
+        rgba(168, 85, 247, 0.12)
+    );
+
+    border: 1px solid rgba(124, 92, 255, 0.22);
+
+    color: #d8d0ff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   USER TEXT
+========================= */
+
+.user-text {
+    min-width: 0;
+}
+
+
+.user-name {
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.user-email {
+    margin-top: 4px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================
+   CONNECT BUTTON
+========================= */
+
+.connect-button {
+    flex-shrink: 0;
+
+    padding: 9px 16px;
+
+    border: 1px solid rgba(124, 92, 255, 0.25);
+
+    border-radius: 9px;
+
+    background: rgba(124, 92, 255, 0.1);
+
+    color: #d2caff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.connect-button:hover {
+    background: rgba(124, 92, 255, 0.2);
+
+    border-color: rgba(124, 92, 255, 0.4);
+
+    transform: translateY(-1px);
+}
+
+.connect-button:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================
+   BUTTON STATES
+========================= */
+
+.connect-button.pending {
+    background: rgba(234, 179, 8, 0.08);
+
+    border-color: rgba(234, 179, 8, 0.2);
+
+    color: #facc15;
+
+    cursor: default;
+}
+
+
+.connect-button.connected {
+    background: rgba(34, 197, 94, 0.08);
+
+    border-color: rgba(34, 197, 94, 0.2);
+
+    color: #86efac;
+
+    cursor: default;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.users-message {
+    display: none;
+
+    margin-top: 14px;
+
+    padding: 11px 14px;
+
+    border-radius: 9px;
+
+    background: rgba(124, 92, 255, 0.07);
+
+    border: 1px solid rgba(124, 92, 255, 0.15);
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+}
+
+.users-message.show {
+    display: block;
+}
+
+
+/* =========================
+   EMPTY / LOADING
+========================= */
+
+.users-loading,
+.users-empty {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .user-item {
+        padding: 16px 18px;
+
+        gap: 12px;
+    }
+
+    .user-details {
+        gap: 11px;
+    }
+
+    .user-avatar-large {
+        width: 40px;
+        height: 40px;
+
+        border-radius: 11px;
+    }
+
+    .connect-button {
+        padding: 8px 12px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .user-email {
+        max-width: 150px;
+    }
+
+    .connect-button {
+        font-size: 11px;
+
+        padding: 7px 10px;
+    }
+
+}
+
+
+
+
+.connect-button.connected {
+    opacity: 0.7;
+    cursor: default;
+}

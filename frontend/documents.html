@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Documents | CONNECT</title>
+
+    <link
+        rel="stylesheet"
+        href="css/common.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/documents.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="dashboard-page">
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <h2>
+                    CONNE<span>CT</span>
+                </h2>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html">
+
+                    <span class="nav-icon">⌂</span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="users.html">
+
+                    <span class="nav-icon">♙</span>
+
+                    <span>
+                        Users
+                    </span>
+
+                </a>
+
+
+                <a href="connections.html">
+
+                    <span class="nav-icon">♧</span>
+
+                    <span>
+                        Connections
+                    </span>
+
+                </a>
+
+
+                <a href="subscription.html">
+
+                    <span class="nav-icon">◆</span>
+
+                    <span>
+                        Subscription
+                    </span>
+
+                </a>
+
+
+                <a href="wallet.html">
+
+                    <span class="nav-icon">◇</span>
+
+                    <span>
+                        Wallet
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="documents.html"
+                    class="active"
+                >
+
+                    <span class="nav-icon">▤</span>
+
+                    <span>
+                        Documents
+                    </span>
+
+                </a>
+
+
+                <a href="video-call.html">
+
+                    <span class="nav-icon">◉</span>
+
+                    <span>
+                        Video Calls
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </aside>
+
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="dashboard-main">
+
+
+            <!-- =========================
+                 TOPBAR
+            ========================== -->
+
+            <header class="dashboard-topbar">
+
+                <div class="dashboard-heading">
+
+                    <h1>
+                        Documents
+                    </h1>
+
+                    <p>
+                        Upload documents and ask AI questions about them.
+                    </p>
+
+                </div>
+
+
+                <div class="user-profile">
+
+                    <div
+                        class="user-avatar"
+                        id="userAvatar"
+                    >
+                        U
+                    </div>
+
+
+                    <div class="user-info">
+
+                        <span
+                            class="user-name"
+                            id="userName"
+                        >
+                            User
+                        </span>
+
+
+                        <span
+                            class="user-role"
+                            id="userRole"
+                        >
+                            User
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =========================
+                 UPLOAD SECTION
+            ========================== -->
+
+            <section class="documents-upload-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            DOCUMENTS
+                        </span>
+
+                        <h2>
+                            Upload a PDF
+                        </h2>
+
+                        <p>
+                            Upload a PDF document to start asking AI questions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card upload-card">
+
+                    <form
+                        id="uploadForm"
+                        enctype="multipart/form-data"
+                    >
+
+                        <div
+                            class="upload-area"
+                            id="uploadArea"
+                        >
+
+                            <div class="upload-icon">
+                                ↑
+                            </div>
+
+
+                            <h3>
+                                Upload your PDF
+                            </h3>
+
+
+                            <p>
+                                Select a PDF document from your computer.
+                            </p>
+
+
+                            <label
+                                for="documentFile"
+                                class="upload-button"
+                            >
+                                Choose PDF
+                            </label>
+
+
+                            <input
+                                type="file"
+                                id="documentFile"
+                                name="file"
+                                accept=".pdf,application/pdf"
+                                hidden
+                            >
+
+
+                            <span
+                                class="selected-file"
+                                id="selectedFile"
+                            >
+                                No file selected
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="upload-submit-btn"
+                            id="uploadButton"
+                        >
+                            Upload Document
+                        </button>
+
+                    </form>
+
+
+                    <div
+                        id="uploadMessage"
+                        class="document-message"
+                    >
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 DOCUMENT LIST
+            ========================== -->
+
+            <section class="documents-list-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            LIBRARY
+                        </span>
+
+                        <h2>
+                            Your Documents
+                        </h2>
+
+                        <p>
+                            Select a document to ask questions about it.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card documents-card">
+
+                    <div
+                        class="documents-list"
+                        id="documentsList"
+                    >
+
+                        <div class="loading-message">
+                            Loading documents...
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 AI QUESTION SECTION
+            ========================== -->
+
+            <section class="ai-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            AI ASSISTANT
+                        </span>
+
+                        <h2>
+                            Ask About Your Document
+                        </h2>
+
+                        <p>
+                            Select a document and ask Gemini about its contents.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card ai-card">
+
+
+                    <!-- Selected document -->
+
+                    <div class="selected-document">
+
+                        <span class="selected-document-label">
+                            SELECTED DOCUMENT
+                        </span>
+
+
+                        <strong id="selectedDocumentName">
+                            No document selected
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- Question form -->
+
+                    <form id="questionForm">
+
+                        <label
+                            for="questionInput"
+                            class="question-label"
+                        >
+                            Your Question
+                        </label>
+
+
+                        <textarea
+                            id="questionInput"
+                            placeholder="Ask something about your document..."
+                            rows="4"
+                        ></textarea>
+
+
+                        <div class="question-actions">
+
+                            <span
+                                id="questionStatus"
+                                class="question-status"
+                            >
+                            </span>
+
+
+                            <button
+                                type="submit"
+                                class="ask-button"
+                                id="askButton"
+                                disabled
+                            >
+                                Ask AI
+                            </button>
+
+                        </div>
+
+                    </form>
+
+
+
+                    <!-- AI answer -->
+
+                    <div
+                        class="ai-answer"
+                        id="aiAnswer"
+                    >
+
+                        <div class="answer-placeholder">
+
+                            <span class="answer-icon">
+                                ✦
+                            </span>
+
+                            <p>
+                                Your AI answer will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Q&A history -->
+
+                    <div class="qa-history">
+
+                        <div class="qa-history-header">
+
+                            <div>
+
+                                <span class="section-label">
+                                    HISTORY
+                                </span>
+
+                                <h3>
+                                    Previous Questions
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="qa-list"
+                            id="qaList"
+                        >
+
+                            <div class="empty-message">
+                                Select a document to view question history.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/documents.js"></script>
+
+</body>
+
+</html>

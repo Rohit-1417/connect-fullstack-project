@@ -1,0 +1,70 @@
+# ==============================
+# Environment / Secrets
+# ==============================
+
+.env
+*.env
+
+# ==============================
+# Python
+# ==============================
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# ==============================
+# IDE / Editor
+# ==============================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==============================
+# OS files
+# ==============================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==============================
+# FastAPI / Python
+# ==============================
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ==============================
+# Uploaded files
+# ==============================
+
+backend/uploads/documents/*
+backend/uploads/vectorstores/*
+
+# Keep upload folders in Git
+!backend/uploads/documents/.gitkeep
+!backend/uploads/vectorstores/.gitkeep
+
+# ==============================
+# Logs
+# ==============================
+
+*.log
+
+# ==============================
+# Database / local files
+# ==============================
+
+*.db
+*.sqlite
+*.sqlite3

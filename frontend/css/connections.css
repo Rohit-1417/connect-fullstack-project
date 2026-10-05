@@ -1,0 +1,440 @@
+/* =========================
+   CONNECTIONS PAGE
+========================= */
+
+.connections-section {
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   SECTION HEADING FIX
+========================= */
+
+.connections-section .section-heading {
+    margin-bottom: 16px;
+}
+
+.connections-section .section-heading h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.connections-section .section-heading p {
+    margin: 0;
+}
+
+
+/* =========================
+   CONNECTION CARD
+========================= */
+
+.connections-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+
+/* =========================
+   LISTS
+========================= */
+
+.requests-list,
+.connections-list {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   CONNECTION ITEM
+========================= */
+
+.connection-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 22px;
+
+    border-bottom: 1px solid var(--border);
+
+    transition: background 0.2s ease;
+}
+
+.connection-item:last-child {
+    border-bottom: none;
+}
+
+.connection-item:hover {
+    background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================
+   USER DETAILS
+========================= */
+
+.connection-user {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    min-width: 0;
+}
+
+
+.connection-avatar {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139, 92, 246, 0.25),
+            rgba(99, 102, 241, 0.12)
+        );
+
+    border: 1px solid
+        rgba(139, 92, 246, 0.25);
+
+    color: #d9c8ff;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.connection-user-info {
+    min-width: 0;
+}
+
+
+.connection-user-name {
+    margin: 0 0 3px;
+
+    color: var(--text-primary);
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+.connection-user-meta {
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.connection-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   ACCEPT
+========================= */
+
+.accept-button {
+    border: 1px solid
+        rgba(139, 92, 246, 0.28);
+
+    padding: 8px 15px;
+
+    border-radius: 9px;
+
+    background:
+        rgba(139, 92, 246, 0.16);
+
+    color: #d8c5ff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.accept-button:hover {
+    background:
+        rgba(139, 92, 246, 0.28);
+
+    border-color:
+        rgba(139, 92, 246, 0.45);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   REJECT
+========================= */
+
+.reject-button {
+    border: 1px solid var(--border);
+
+    padding: 8px 15px;
+
+    border-radius: 9px;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.reject-button:hover {
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color: var(--text-primary);
+}
+
+
+/* =========================
+   CONNECTED STATUS
+========================= */
+
+.connected-status {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(139, 92, 246, 0.10);
+
+    border: 1px solid
+        rgba(139, 92, 246, 0.18);
+
+    color: #cbb4f5;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.connected-status::before {
+    content: "";
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #a78bfa;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.connections-empty {
+    padding: 38px 24px;
+
+    text-align: center;
+}
+
+
+.connections-empty-icon {
+    width: 48px;
+    height: 48px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        rgba(139, 92, 246, 0.10);
+
+    border: 1px solid
+        rgba(139, 92, 246, 0.16);
+
+    color: #bda3ef;
+
+    font-size: 20px;
+}
+
+
+.connections-empty h3 {
+    margin: 0 0 6px;
+
+    color: var(--text-primary);
+
+    font-size: 15px;
+}
+
+
+.connections-empty p {
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.connections-loading {
+    padding: 34px 24px;
+
+    text-align: center;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.connections-message {
+    position: fixed;
+
+    right: 30px;
+    bottom: 30px;
+
+    max-width: 340px;
+
+    padding: 13px 18px;
+
+    border-radius: 12px;
+
+    background: #171923;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    color: var(--text-primary);
+
+    font-size: 13px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(12px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+    z-index: 100;
+}
+
+
+.connections-message.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   DISABLED BUTTON
+========================= */
+
+.accept-button:disabled,
+.reject-button:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .connections-section {
+        margin-bottom: 22px;
+    }
+
+    .connection-item {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        padding: 17px;
+    }
+
+
+    .connection-actions {
+        width: 100%;
+    }
+
+
+    .accept-button,
+    .reject-button {
+        flex: 1;
+    }
+
+
+    .connections-message {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+
+        max-width: none;
+    }
+}

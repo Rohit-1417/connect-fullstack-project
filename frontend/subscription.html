@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Subscription | CONNECT</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/subscription.css">
+</head>
+
+<body>
+
+    <div class="dashboard-page">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <h2>CONNE<span>CT</span></h2>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="users.html">
+                    <span class="nav-icon">♙</span>
+                    <span>Users</span>
+                </a>
+
+                <a href="connections.html">
+                    <span class="nav-icon">♧</span>
+                    <span>Connections</span>
+                </a>
+
+                <a href="subscription.html" class="active">
+                    <span class="nav-icon">◆</span>
+                    <span>Subscription</span>
+                </a>
+
+                <a href="wallet.html">
+                    <span class="nav-icon">◇</span>
+                    <span>Wallet</span>
+                </a>
+
+                <a href="documents.html">
+                    <span class="nav-icon">▤</span>
+                    <span>Documents</span>
+                </a>
+
+                <a href="video-call.html">
+                    <span class="nav-icon">◉</span>
+                    <span>Video Calls</span>
+                </a>
+
+            </nav>
+
+            <button class="logout-btn" onclick="logout()">
+                Logout
+            </button>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="dashboard-main">
+
+            <!-- TOP BAR -->
+
+            <header class="dashboard-topbar">
+
+                <div class="dashboard-heading">
+
+                    <h1>
+                        Subscription
+                    </h1>
+
+                    <p>
+                        Choose a plan and unlock more from CONNECT.
+                    </p>
+
+                </div>
+
+
+                <!-- USER PROFILE -->
+
+                <div class="user-profile">
+
+                    <div class="user-avatar" id="userAvatar">
+                        U
+                    </div>
+
+                    <div class="user-info">
+
+                        <span class="user-name" id="userName">
+                            User
+                        </span>
+
+                        <span class="user-role" id="userRole">
+                            User
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =========================
+                 CURRENT PLAN
+            ========================== -->
+
+            <section class="current-plan-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            YOUR PLAN
+                        </span>
+
+                        <h2>
+                            Current Subscription
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card current-plan-card">
+
+                    <div class="current-plan-content">
+
+                        <div>
+
+                            <span class="current-plan-label">
+                                Active Plan
+                            </span>
+
+                            <h3 id="currentPlanName">
+                                No active plan
+                            </h3>
+
+                            <p id="currentPlanStatus">
+                                Choose a plan below to get started.
+                            </p>
+
+                        </div>
+
+
+                        <div class="current-plan-credits">
+
+                            <span>
+                                Available Credits
+                            </span>
+
+                            <strong id="currentPlanCredits">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 AVAILABLE PLANS
+            ========================== -->
+
+            <section class="plans-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            PLANS
+                        </span>
+
+                        <h2>
+                            Choose Your Plan
+                        </h2>
+
+                        <p>
+                            Select the plan that fits your needs.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="plans-grid" id="plansContainer">
+
+                    <!-- Plans will be loaded by JavaScript -->
+
+                    <div class="loading-message">
+                        Loading plans...
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 MESSAGE
+            ========================== -->
+
+            <div id="subscriptionMessage" class="subscription-message">
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/api.js"></script>
+    <script src="js/subscription.js"></script>
+
+</body>
+
+</html>
